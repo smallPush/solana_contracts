@@ -31,19 +31,19 @@ class SignatureController extends ControllerBase {
     $signature_entity->save();
 
     // Update the contract status.
-    $current_status = $contract->get('status')->value;
+    $current_status = $contract->get('contract_status')->value;
     $party_a_id = $contract->get('party_a')->target_id;
     $party_b_id = $contract->get('party_b')->target_id;
     $user_id = $user->id();
 
     if (($current_status === 'signed_b' && $user_id == $party_a_id) || ($current_status === 'signed_a' && $user_id == $party_b_id)) {
-      $contract->set('status', 'signed_both');
+      $contract->set('contract_status', 'signed_both');
     }
     elseif ($user_id == $party_a_id) {
-      $contract->set('status', 'signed_a');
+      $contract->set('contract_status', 'signed_a');
     }
     elseif ($user_id == $party_b_id) {
-      $contract->set('status', 'signed_b');
+      $contract->set('contract_status', 'signed_b');
     }
     $contract->save();
 

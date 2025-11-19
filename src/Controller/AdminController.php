@@ -73,7 +73,7 @@ class AdminController extends ControllerBase {
     foreach ($contracts as $contract) {
       $build['contracts_table'][$contract->id()] = [
         'title' => ['#markup' => $contract->label()],
-        'status' => ['#markup' => $contract->get('status')->value],
+        'status' => ['#markup' => $contract->get('contract_status')->value],
         'operations' => $this->formBuilder->getForm('\Drupal\solana_contracts\Form\AdminContractStatusForm', $contract),
       ];
     }

@@ -69,3 +69,10 @@ solana_contracts.admin_dashboard:
     _title: 'Contracts Dashboard'
   requirements:
     _permission: 'administer contract entities'
+
+solana_contracts.api.contracts:
+  path: '/api/contracts'
+  defaults:
+    _controller: '\Drupal\solana_contracts\Controller\ApiController::getContracts'
+  requirements:
+    _permission: 'administer contract entities'
