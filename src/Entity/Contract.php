@@ -26,6 +26,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *     },
  *     "access" = "Drupal\solana_contracts\ContractAccessControlHandler",
  *   },
+ *   list_cache_tags = { "contract_list" },
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "title",
