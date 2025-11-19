@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contract.party_b
+  module:
+    - solana_contracts
+    - user
+id: contract.contract.party_b
+field_name: party_b
+entity_type: contract
+bundle: contract
+label: 'Party B'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+      config:
+        negate: false
+        target_bundles: null
+    target_bundles: null
+    sort:
+      field: _none
+field_type: entity_reference

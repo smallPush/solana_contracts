@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - solana_contracts
+    - text
+id: contract.description
+field_name: description
+entity_type: contract
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

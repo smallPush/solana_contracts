@@ -1,8 +1,55 @@
-solana_contracts.api_sign:
-  path: '/api/solana/sign'
+entity.contract.add_form:
+  path: '/contract/add'
   defaults:
-    _controller: '\Drupal\solana_contracts\Controller\SolanaApiController::registerSignature'
-  methods: [POST]
+    _entity_form: 'contract.add'
+    _title: 'Add contract'
   requirements:
-    _user_is_logged_in: 'TRUE'
-    _permission: 'access content'
+    _permission: 'create contract entities'
+
+entity.contract.canonical:
+  path: '/contract/{contract}'
+  defaults:
+    _entity_view: 'contract.full'
+    _title_callback: '\Drupal\Core\Entity\Controller\EntityController::title'
+  requirements:
+    _entity_access: 'contract.view'
+
+entity.contract.collection:
+  path: '/contract/list'
+  defaults:
+    _entity_list: 'contract'
+    _title: 'Contracts'
+  requirements:
+    _permission: 'view own contract entities'
+
+solana_contracts.sign_form:
+  path: '/contract/{contract}/sign'
+  defaults:
+    _form: '\Drupal\solana_contracts\Form\SignForm'
+    _title: 'Sign Contract'
+  requirements:
+    _permission: 'sign contract entities'
+
+solana_contracts.save_signature:
+  path: '/contract/{contract}/signature'
+  defaults:
+    _controller: '\Drupal\solana_contracts\Controller\SignatureController::save'
+  requirements:
+    _permission: 'sign contract entities'
+  methods: [POST]
+
+solana_contracts.reject_signature:
+  path: '/contract/{contract}/reject'
+  defaults:
+    _controller: '\Drupal\solana_contracts\Controller\SignatureController::reject'
+  requirements:
+    _permission: 'sign contract entities'
+  methods: [POST]
+
+solana_contracts.admin_dashboard:
+  path: '/admin/contracts'
+  defaults:
+    _controller: '\Drupal\solana_contracts\Controller\AdminController::dashboard'
+    _title: 'Contracts Dashboard'
+  requirements:
+    _permission: 'administer contract entities'

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contract.title
+  module:
+    - solana_contracts
+id: contract.contract.title
+field_name: title
+entity_type: contract
+bundle: contract
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

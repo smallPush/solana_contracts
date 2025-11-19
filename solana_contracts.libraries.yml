@@ -1,11 +1,7 @@
-solana_signer:
+solana-web3:
   version: 1.x
   js:
-    # Using the CDN for Solana Web3.js for simplicity.
-    # In production, this should be added via package.json/webpack.
-    https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js: { type: external }
-    js/solana_signer.js: {}
+    https://cdn.jsdelivr.net/npm/@solana/web3.js@latest/lib/index.iife.min.js: { type: external, minified: true }
+    js/solana_contracts.js: {}
   dependencies:
     - core/drupal
-    - core/drupalSettings
-    - core/jquery

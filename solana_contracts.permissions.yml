@@ -1,0 +1,13 @@
+create contract entities:
+  title: 'Create contract entities'
+  description: 'Allow users to create their own contract entities.'
+view own contract entities:
+  title: 'View own contract entities'
+  description: 'Allow users to view their own contract entities.'
+sign contract entities:
+  title: 'Sign contract entities'
+  description: 'Allow users to sign contract entities.'
+administer contract entities:
+  title: 'Administer contract entities'
+  description: 'Allow users to administer all contract entities.'
+  restrict access: true

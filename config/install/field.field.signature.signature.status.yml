@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.signature.status
+  module:
+    - solana_contracts
+id: signature.signature.status
+field_name: status
+entity_type: signature
+bundle: signature
+label: Status
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: pending
+default_value_callback: ''
+settings: {  }
+field_type: list_string

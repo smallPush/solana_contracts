@@ -1,9 +1,5 @@
-name: 'Solana Contracts'
+name: 'Solana Contract'
 type: module
-description: 'Allows users to create contracts and sign them using the Solana blockchain.'
-core_version_requirement: ^9 || ^10
-package: 'Blockchain'
-dependencies:
-  - drupal:user
-  - drupal:serialization
-  - drupal:rest
+description: 'Integrates with the Solana network to sign contracts.'
+core_version_requirement: ^9 || ^10 || ^11
+package: 'Custom'

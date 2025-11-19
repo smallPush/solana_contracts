@@ -1,0 +1,4 @@
+solana_contracts.sign_contract:
+  route_name: solana_contracts.sign_form
+  base_route: entity.contract.canonical
+  title: 'Sign Contract'

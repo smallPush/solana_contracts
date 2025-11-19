@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - solana_contracts
+id: signature.contract_id
+field_name: contract_id
+entity_type: signature
+type: entity_reference
+settings:
+  target_type: contract
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contract.created
+  module:
+    - solana_contracts
+id: contract.contract.created
+field_name: created
+entity_type: contract
+bundle: contract
+label: Created
+description: 'The time that the entity was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

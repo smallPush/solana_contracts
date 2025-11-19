@@ -1,0 +1,5 @@
+contract.add:
+  route_name: entity.contract.add_form
+  title: 'Add contract'
+  appears_on:
+    - entity.contract.collection

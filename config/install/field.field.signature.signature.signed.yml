@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.signature.signed
+  module:
+    - solana_contracts
+id: signature.signature.signed
+field_name: signed
+entity_type: signature
+bundle: signature
+label: Signed
+description: 'The time that the entity was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

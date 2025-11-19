@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.signature.contract_id
+  module:
+    - solana_contracts
+id: signature.signature.contract_id
+field_name: contract_id
+entity_type: signature
+bundle: signature
+label: Contract
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:contract'
+  handler_settings: {  }
+field_type: entity_reference

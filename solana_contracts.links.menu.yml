@@ -1,0 +1,6 @@
+solana_contracts.admin:
+  title: 'Solana Contracts'
+  description: 'Manage Solana contracts and signatures.'
+  parent: system.admin_content
+  route_name: solana_contracts.admin_dashboard
+  weight: 100

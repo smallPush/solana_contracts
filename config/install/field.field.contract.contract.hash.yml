@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contract.hash
+  module:
+    - solana_contracts
+id: contract.contract.hash
+field_name: hash
+entity_type: contract
+bundle: contract
+label: 'Solana Hash'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

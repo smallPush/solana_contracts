@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.signature.signature
+  module:
+    - solana_contracts
+id: signature.signature.signature
+field_name: signature
+entity_type: signature
+bundle: signature
+label: 'Digital Signature'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

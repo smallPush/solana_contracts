@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - solana_contracts
+id: contract.status
+field_name: status
+entity_type: contract
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: pending
+      label: Pending
+    -
+      value: signed_a
+      label: 'Signed by A'
+    -
+      value: signed_b
+      label: 'Signed by B'
+    -
+      value: signed_both
+      label: 'Signed by both parties'
+    -
+      value: expired
+      label: Expired
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
