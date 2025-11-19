@@ -24,7 +24,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *       "edit" = "Drupal\solana_contracts\Form\ContractForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *     },
- *     "access" = "Drupal\Core\Entity\EntityAccessControlHandler",
+ *     "access" = "Drupal\solana_contracts\ContractAccessControlHandler",
  *   },
  *   entity_keys = {
  *     "id" = "id",

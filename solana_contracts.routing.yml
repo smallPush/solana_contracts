@@ -6,6 +6,22 @@ entity.contract.add_form:
   requirements:
     _permission: 'create contract entities'
 
+entity.contract.edit_form:
+  path: '/contract/{contract}/edit'
+  defaults:
+    _entity_form: 'contract.edit'
+    _title: 'Edit Contract'
+  requirements:
+    _entity_access: 'contract.update'
+
+entity.contract.delete_form:
+  path: '/contract/{contract}/delete'
+  defaults:
+    _entity_form: 'contract.delete'
+    _title: 'Delete Contract'
+  requirements:
+    _entity_access: 'contract.delete'
+
 entity.contract.canonical:
   path: '/contract/{contract}'
   defaults:
