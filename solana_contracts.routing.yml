@@ -1,0 +1,8 @@
+solana_contracts.api_sign:
+  path: '/api/solana/sign'
+  defaults:
+    _controller: '\Drupal\solana_contracts\Controller\SolanaApiController::registerSignature'
+  methods: [POST]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    _permission: 'access content'
