@@ -133,7 +133,7 @@ class Contract extends ContentEntityBase {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['status'] = BaseFieldDefinition::create('list_string')
+    $fields['contract_status'] = BaseFieldDefinition::create('list_string')
       ->setLabel(t('Status'))
       ->setSettings([
         'allowed_values' => [
