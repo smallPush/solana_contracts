@@ -44,14 +44,14 @@ solana_contracts.sign_form:
     _form: '\Drupal\solana_contracts\Form\SignForm'
     _title: 'Sign Contract'
   requirements:
-    _permission: 'sign contract entities'
+    _entity_access: 'contract.sign'
 
 solana_contracts.save_signature:
   path: '/contract/{contract}/signature'
   defaults:
     _controller: '\Drupal\solana_contracts\Controller\SignatureController::save'
   requirements:
-    _permission: 'sign contract entities'
+    _entity_access: 'contract.sign'
   methods: [POST]
 
 solana_contracts.reject_signature:
@@ -59,7 +59,7 @@ solana_contracts.reject_signature:
   defaults:
     _controller: '\Drupal\solana_contracts\Controller\SignatureController::reject'
   requirements:
-    _permission: 'sign contract entities'
+    _entity_access: 'contract.sign'
   methods: [POST]
 
 solana_contracts.admin_dashboard:
