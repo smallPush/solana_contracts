@@ -61,6 +61,22 @@ class Contract extends ContentEntityBase {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    $fields['concept'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Concept'))
+      ->setDescription(t('The concept of the contract.'))
+      ->setRequired(FALSE)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
     $fields['description'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Description'))
       ->setDisplayOptions('view', [
@@ -161,6 +177,7 @@ class Contract extends ContentEntityBase {
 
     if ($this->isNew()) {
       $data = $this->get('title')->value .
+        $this->get('concept')->value .
         $this->get('description')->value .
         $this->get('expires')->value .
         $this->get('party_a')->target_id;

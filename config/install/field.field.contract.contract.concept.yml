@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contract.concept
+  module:
+    - solana_contracts
+id: contract.contract.concept
+field_name: concept
+entity_type: contract
+bundle: contract
+label: Concept
+description: 'The concept of the contract.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
