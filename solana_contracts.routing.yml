@@ -76,3 +76,11 @@ solana_contracts.api.contracts:
     _controller: '\Drupal\solana_contracts\Controller\ApiController::getContracts'
   requirements:
     _permission: 'administer contract entities'
+
+solana_contracts.contract_settings:
+  path: '/admin/structure/contract'
+  defaults:
+    _form: '\Drupal\solana_contracts\Form\ContractSettingsForm'
+    _title: 'Contract Settings'
+  requirements:
+    _permission: 'administer contract entities'

@@ -39,6 +39,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *     "delete-form" = "/contract/{contract}/delete",
  *     "collection" = "/contract/list",
  *   },
+ *   field_ui_base_route = "solana_contracts.contract_settings",
  * )
  */
 class Contract extends ContentEntityBase {

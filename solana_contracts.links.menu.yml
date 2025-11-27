@@ -4,3 +4,9 @@ solana_contracts.admin:
   parent: system.admin_content
   route_name: solana_contracts.admin_dashboard
   weight: 100
+
+solana_contracts.contract_settings:
+  title: 'Contract Settings'
+  description: 'Configure Contract entity.'
+  route_name: solana_contracts.contract_settings
+  parent: system.admin_structure
