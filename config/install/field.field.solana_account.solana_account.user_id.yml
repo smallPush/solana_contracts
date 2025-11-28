@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.solana_account.user_id
+  module:
+    - solana_contracts
+    - user
+id: solana_account.solana_account.user_id
+field_name: user_id
+entity_type: solana_account
+bundle: solana_account
+label: 'User'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+      config:
+        negate: false
+        target_bundles: null
+    target_bundles: null
+    sort:
+      field: _none
+field_type: entity_reference

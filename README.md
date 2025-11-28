@@ -21,3 +21,8 @@ This module provides a framework for creating and signing contracts using the So
 *   Users can view their contracts at `/contract/list`.
 *   Users can sign contracts by clicking the "Sign" button on the contract view page.
 *   Administrators can manage contracts at `/admin/contracts`.
+
+
+## Update 
+
+* New entity with the solana account address of the user. The entity is called `solana_account`, is a content entity and is linked to the user entity.

@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - solana_contracts
+id: solana_account.changed
+field_name: changed
+entity_type: solana_account
+type: changed
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

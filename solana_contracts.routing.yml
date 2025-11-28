@@ -74,5 +74,44 @@ solana_contracts.api.contracts:
   path: '/api/contracts'
   defaults:
     _controller: '\Drupal\solana_contracts\Controller\ApiController::getContracts'
-  requirements:
     _permission: 'administer contract entities'
+
+entity.solana_account.collection:
+  path: '/solana_account/list'
+  defaults:
+    _entity_list: 'solana_account'
+    _title: 'Solana Accounts'
+  requirements:
+    _permission: 'view own solana_account entities'
+
+entity.solana_account.add_form:
+  path: '/solana_account/add'
+  defaults:
+    _entity_form: 'solana_account.add'
+    _title: 'Add Solana Account'
+  requirements:
+    _permission: 'create solana_account entities'
+
+entity.solana_account.edit_form:
+  path: '/solana_account/{solana_account}/edit'
+  defaults:
+    _entity_form: 'solana_account.edit'
+    _title: 'Edit Solana Account'
+  requirements:
+    _permission: 'administer solana_account entities'
+
+entity.solana_account.delete_form:
+  path: '/solana_account/{solana_account}/delete'
+  defaults:
+    _entity_form: 'solana_account.delete'
+    _title: 'Delete Solana Account'
+  requirements:
+    _permission: 'administer solana_account entities'
+
+entity.solana_account.canonical:
+  path: '/solana_account/{solana_account}'
+  defaults:
+    _entity_view: 'solana_account.full'
+    _title_callback: '\Drupal\Core\Entity\Controller\EntityController::title'
+  requirements:
+    _permission: 'view own solana_account entities'

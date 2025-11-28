@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the solana_contracts module.
+ */
+
+/**
+ * Install the solana_account entity type.
+ */
+function solana_contracts_update_8001() {
+  \Drupal::entityDefinitionUpdateManager()->installEntityType(\Drupal::entityTypeManager()->getDefinition('solana_account'));
+}

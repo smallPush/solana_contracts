@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.solana_account.solana_account.address
+    - field.field.solana_account.solana_account.user_id
+  module:
+    - solana_contracts
+id: solana_account.solana_account.default
+targetEntityType: solana_account
+bundle: solana_account
+mode: default
+content:
+  address:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  changed: true

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.solana_account.created
+  module:
+    - solana_contracts
+id: solana_account.solana_account.created
+field_name: created
+entity_type: solana_account
+bundle: solana_account
+label: 'Created'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

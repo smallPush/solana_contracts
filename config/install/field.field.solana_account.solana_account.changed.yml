@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.solana_account.changed
+  module:
+    - solana_contracts
+id: solana_account.solana_account.changed
+field_name: changed
+entity_type: solana_account
+bundle: solana_account
+label: 'Changed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
