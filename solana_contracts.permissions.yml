@@ -11,3 +11,14 @@ administer contract entities:
   title: 'Administer contract entities'
   description: 'Allow users to administer all contract entities.'
   restrict access: true
+
+create solana_account entities:
+  title: 'Create solana_account entities'
+  description: 'Allow users to create their own solana_account entities.'
+view own solana_account entities:
+  title: 'View own solana_account entities'
+  description: 'Allow users to view their own solana_account entities.'
+administer solana_account entities:
+  title: 'Administer solana_account entities'
+  description: 'Allow users to administer all solana_account entities.'
+  restrict access: true

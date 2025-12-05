@@ -1,0 +1,39 @@
+{
+    "name": "drupal/solana_contracts",
+    "description": "Solana Contracts module",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "require": {},
+    "require-dev": {
+        "drupal/core": "^10",
+        "phpunit/phpunit": "^9",
+        "phpspec/prophecy-phpunit": "^2.4",
+        "symfony/phpunit-bridge": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\solana_contracts\\": "src/",
+            "Drupal\\Tests\\": "vendor/drupal/core/tests/Drupal/Tests/",
+            "Drupal\\TestTools\\": "vendor/drupal/core/tests/Drupal/TestTools/"
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.solana_account.address
+  module:
+    - solana_contracts
+id: solana_account.solana_account.address
+field_name: address
+entity_type: solana_account
+bundle: solana_account
+label: 'Solana Address'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
