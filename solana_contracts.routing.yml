@@ -115,3 +115,10 @@ entity.solana_account.canonical:
     _title_callback: '\Drupal\Core\Entity\Controller\EntityController::title'
   requirements:
     _permission: 'view own solana_account entities'
+solana_contracts.contract_settings:
+  path: '/admin/structure/contract'
+  defaults:
+    _form: '\Drupal\solana_contracts\Form\ContractSettingsForm'
+    _title: 'Contract Settings'
+  requirements:
+    _permission: 'administer contract entities'
