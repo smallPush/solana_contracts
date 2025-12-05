@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php" colors="true">
+  <testsuites>
+    <testsuite name="Solana Contracts Unit Test Suite">
+      <directory>tests/src/Unit</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <env name="SIMPLETEST_DB" value="sqlite://localhost/sites/default/files/db.sqlite"/>
+  </php>
+</phpunit>
