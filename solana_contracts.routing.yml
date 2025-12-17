@@ -122,3 +122,10 @@ solana_contracts.contract_settings:
     _title: 'Contract Settings'
   requirements:
     _permission: 'administer contract entities'
+solana_contracts.settings:
+  path: '/admin/config/solana_contracts/settings'
+  defaults:
+    _form: '\Drupal\solana_contracts\Form\SolanaSettingsForm'
+    _title: 'Solana Contracts Settings'
+  requirements:
+    _permission: 'administer contract entities'

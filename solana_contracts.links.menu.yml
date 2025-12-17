@@ -10,3 +10,9 @@ solana_contracts.contract_settings:
   description: 'Configure Contract entity.'
   route_name: solana_contracts.contract_settings
   parent: system.admin_structure
+solana_contracts.settings:
+  title: 'Solana Contracts Settings'
+  description: 'Configure Solana network and other settings.'
+  route_name: solana_contracts.settings
+  parent: system.admin_config_services
+  weight: 100
