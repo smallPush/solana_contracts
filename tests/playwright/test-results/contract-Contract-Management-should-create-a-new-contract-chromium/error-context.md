@@ -1,0 +1,192 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - link "Skip to main content ➔" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - group "Site administration toolbar":
+    - navigation "Toolbar items" [ref=e3]:
+      - heading "Toolbar items" [level=2] [ref=e4]
+      - generic [ref=e5]:
+        - button "Manage" [pressed] [ref=e6] [cursor=pointer]
+        - navigation "Administration menu" [ref=e8]:
+          - heading "Administration menu" [level=3] [ref=e9]
+          - generic:
+            - list:
+              - listitem [ref=e10]:
+                - link "Content" [ref=e11] [cursor=pointer]:
+                  - /url: /admin/content
+              - listitem [ref=e12]:
+                - link "Structure" [ref=e13] [cursor=pointer]:
+                  - /url: /admin/structure
+              - listitem [ref=e14]:
+                - link "Appearance" [ref=e15] [cursor=pointer]:
+                  - /url: /admin/appearance
+              - listitem [ref=e16]:
+                - link "Extend" [ref=e17] [cursor=pointer]:
+                  - /url: /admin/modules
+              - listitem [ref=e18]:
+                - link "Configuration" [ref=e19] [cursor=pointer]:
+                  - /url: /admin/config
+              - listitem [ref=e20]:
+                - link "People" [ref=e21] [cursor=pointer]:
+                  - /url: /admin/people
+              - listitem [ref=e22]:
+                - link "Reports" [ref=e23] [cursor=pointer]:
+                  - /url: /admin/reports
+              - listitem [ref=e24]:
+                - link "Help" [ref=e25] [cursor=pointer]:
+                  - /url: /admin/help
+          - button "Vertical orientation" [ref=e28] [cursor=pointer]
+      - button "Shortcuts" [ref=e30] [cursor=pointer]
+      - generic [ref=e31]:
+        - button "Edit" [ref=e32] [cursor=pointer]
+        - generic:
+          - navigation
+      - button "admin" [ref=e34] [cursor=pointer]
+      - generic [ref=e35]:
+        - link "Announcements" [ref=e36] [cursor=pointer]:
+          - /url: /admin/announcements_feed
+        - generic:
+          - navigation
+  - generic [ref=e39]:
+    - banner [ref=e40]:
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - switch "Sticky header"
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - button "Open configuration options" [ref=e46] [cursor=pointer]
+            - link "Drush Site-Install" [ref=e50] [cursor=pointer]:
+              - /url: /
+          - generic [ref=e51]:
+            - navigation "Main navigation" [ref=e52]:
+              - heading "Main navigation" [level=2] [ref=e53]
+              - button "Open Main navigation configuration options" [ref=e54] [cursor=pointer]
+              - list [ref=e55]:
+                - listitem [ref=e56]:
+                  - link "Home" [ref=e57] [cursor=pointer]:
+                    - /url: /
+                    - generic [ref=e58]: Home
+            - generic [ref=e59]:
+              - search [ref=e60]:
+                - button "Open configuration options" [ref=e61] [cursor=pointer]
+                - button "Search Form" [ref=e62] [cursor=pointer]:
+                  - img [ref=e63]
+              - navigation "User account menu" [ref=e65]:
+                - generic [ref=e66]: User account menu
+                - button "Open configuration options" [ref=e67] [cursor=pointer]
+                - list [ref=e68]:
+                  - listitem [ref=e69]:
+                    - link "My account" [ref=e70] [cursor=pointer]:
+                      - /url: /user
+                  - listitem [ref=e71]:
+                    - link "Log out" [ref=e72] [cursor=pointer]:
+                      - /url: /user/logout?token=rVT5Dx2r6YlH2y7tJXyTYAFhcLUeGKb5S42aUKcqE1U
+    - generic [ref=e76]:
+      - generic [ref=e78]:
+        - button "Open Breadcrumb configuration options" [ref=e80] [cursor=pointer]
+        - navigation "Breadcrumb" [ref=e82]:
+          - heading "Breadcrumb" [level=2] [ref=e83]
+          - list [ref=e85]:
+            - listitem [ref=e86]:
+              - link "Home" [ref=e87] [cursor=pointer]:
+                - /url: /
+      - main [ref=e88]:
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - heading "Add contract" [level=1] [ref=e92]
+            - link "Add to Default shortcuts" [ref=e93] [cursor=pointer]:
+              - /url: /admin/config/user-interface/shortcut/manage/default/add-link-inline?link=contract/add&name=Add%20contract&destination=/contract/add&token=wY1yk6UPE5lCEzghGzqxUyd6YKjbteKQ9lSPYtpEBD4
+              - generic [ref=e95]:
+                - text: Add to
+                - emphasis [ref=e96]: Default
+                - text: shortcuts
+          - button "Open configuration options" [ref=e97] [cursor=pointer]
+        - generic [ref=e101]:
+          - generic [ref=e103]:
+            - generic [ref=e104] [cursor=pointer]: Title
+            - textbox "Title" [active] [ref=e105]:
+              - /placeholder: ""
+              - text: Test Contract via Playwright
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - generic [ref=e109] [cursor=pointer]: Description
+              - application "Rich Text Editor" [ref=e111]:
+                - toolbar "Editor toolbar" [ref=e114]:
+                  - generic [ref=e115]:
+                    - button "Bold" [ref=e116]:
+                      - img [ref=e117]
+                    - button "Italic" [ref=e119]:
+                      - img [ref=e120]
+                    - button "Link" [ref=e123]:
+                      - img [ref=e124]
+                    - button "Bulleted List" [ref=e127]:
+                      - img [ref=e128]
+                    - generic [ref=e131]:
+                      - button "Numbered List" [ref=e132]:
+                        - img [ref=e133]
+                      - button "Numbered List" [ref=e135]:
+                        - img [ref=e136]
+                    - button "Block quote" [ref=e139]:
+                      - img [ref=e140]
+                    - button "Upload image from computer" [ref=e142]:
+                      - img [ref=e143]
+                    - button "Paragraph, Heading" [ref=e149]:
+                      - generic [ref=e150]: Paragraph
+                      - img
+                    - button "Code" [ref=e151]:
+                      - img [ref=e152]
+                    - button "Source" [ref=e155]:
+                      - img [ref=e156]
+                      - generic [ref=e159]: Source
+                - 'textbox "Rich Text Editor. Editing area: main. Press Alt+0 for help." [ref=e160]':
+                  - paragraph [ref=e161]
+            - generic [ref=e162]:
+              - link "About text formats" [ref=e164] [cursor=pointer]:
+                - /url: /filter/tips
+              - generic [ref=e165]:
+                - generic [ref=e166] [cursor=pointer]: Text format
+                - combobox "Text format" [ref=e167]:
+                  - option "Basic HTML" [selected]
+                  - option "Restricted HTML"
+                  - option "Full HTML"
+          - generic [ref=e169]:
+            - heading "Expires" [level=4] [ref=e170]
+            - generic [ref=e171]:
+              - generic [ref=e172]:
+                - generic [ref=e173] [cursor=pointer]: Date
+                - textbox "Date" [ref=e174]
+              - generic [ref=e175]:
+                - generic [ref=e176] [cursor=pointer]: Time
+                - textbox "Time" [ref=e177]
+            - generic [ref=e178]: Leave blank to use the time of form submission.
+          - generic [ref=e180]:
+            - generic [ref=e181] [cursor=pointer]: Party A
+            - textbox "Party A" [ref=e182]:
+              - /placeholder: ""
+          - generic [ref=e184]:
+            - generic [ref=e185] [cursor=pointer]: Party B
+            - textbox "Party B" [ref=e186]:
+              - /placeholder: ""
+          - button "Save" [ref=e188] [cursor=pointer]
+    - contentinfo [ref=e190]:
+      - generic [ref=e193]:
+        - button "Open configuration options" [ref=e194] [cursor=pointer]
+        - generic [ref=e195]:
+          - text: Powered by
+          - link "Drupal" [ref=e196] [cursor=pointer]:
+            - /url: https://www.drupal.org
+          - img "Drupal Logo" [ref=e197]:
+            - img [ref=e198]
+  - status [ref=e200]
+  - status [ref=e201]
+  - generic [ref=e202]: Tray "Administration menu" opened.
+  - generic:
+    - application:
+      - generic:
+        - generic:
+          - list
+        - generic:
+          - list
+```

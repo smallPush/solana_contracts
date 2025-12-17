@@ -1,0 +1,12 @@
+{
+  "name": "solana_contracts_playwright",
+  "version": "1.0.0",
+  "description": "Playwright tests for Solana Contracts module",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.10.0"
+  }
+}
