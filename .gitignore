@@ -1,2 +1,4 @@
 vendor
 .phpunit*
+tests/playwright/playwright-report/*
+tests/playwright/test-results/*
