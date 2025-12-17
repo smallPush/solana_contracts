@@ -1,0 +1,7 @@
+solana_contracts.settings:
+  type: config_object
+  label: 'Solana Contracts Settings'
+  mapping:
+    solana_network:
+      type: string
+      label: 'Solana Network'
