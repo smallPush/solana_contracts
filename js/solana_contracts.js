@@ -25,33 +25,82 @@
 
       if (signButton) {
         signButton.addEventListener('click', async () => {
-          if (window.solana && window.solana.isConnected) {
-            try {
+          let signature;
+          let publicKey;
+
+          try {
+            // Case 1: Use stored keys from Drupal
+            if (settings.solana_contracts.solana_account && settings.solana_contracts.solana_account.private_key) {
+              const secretKey = new Uint8Array(settings.solana_contracts.solana_account.private_key.split(',').map(Number));
+              const keypair = solanaWeb3.Keypair.fromSecretKey(secretKey);
+              const message = new TextEncoder().encode(settings.solana_contracts.contract_hash);
+              const signatureBytes = solanaWeb3.nacl.sign.detached(message, keypair.secretKey);
+              signature = solanaWeb3.bs58.encode(signatureBytes);
+              publicKey = keypair.publicKey.toString();
+              console.log('Signed with stored key');
+            }
+            // Case 2: Connect to Wallet (if available and connected)
+            else if (window.solana && window.solana.isConnected) {
               const message = new TextEncoder().encode(settings.solana_contracts.contract_hash);
               const signedMessage = await window.solana.signMessage(message, 'utf8');
-              const signature = solanaWeb3.bs58.encode(signedMessage.signature);
+              signature = solanaWeb3.bs58.encode(signedMessage.signature);
+              console.log('Signed with wallet');
+            }
+            // Case 3: Auto-generate new keys
+            else {
+              // Generate new keypair
+              const keypair = solanaWeb3.Keypair.generate();
+              publicKey = keypair.publicKey.toString();
+              const secretKey = keypair.secretKey.toString();
 
-              // Send the signature to the server
-              const contractId = settings.solana_contracts.contract_id;
-              const response = await fetch(`/contract/${contractId}/signature`, {
+              // Save keys to server
+              const saveResponse = await fetch('/solana/save-keys', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ signature: signature })
+                body: JSON.stringify({
+                  publicKey: publicKey,
+                  secretKey: secretKey
+                })
               });
 
-              if (response.ok) {
-                alert('Contract signed successfully!');
-                window.location.reload();
-              } else {
-                alert('Could not save signature.');
+              if (!saveResponse.ok) {
+                throw new Error('Failed to save generated keys');
               }
-            } catch (err) {
-              alert('Could not sign message');
+
+              // Sign with new key
+              const message = new TextEncoder().encode(settings.solana_contracts.contract_hash);
+              const signatureBytes = solanaWeb3.nacl.sign.detached(message, keypair.secretKey);
+              signature = solanaWeb3.bs58.encode(signatureBytes);
+              console.log('Generated and signed with new key');
             }
-          } else {
-            alert('Please connect your wallet first.');
+
+            if (!signature) {
+              throw new Error('No signature generated');
+            }
+
+            // Send the signature to the server
+            const contractId = settings.solana_contracts.contract_id;
+            const response = await fetch(`/contract/${contractId}/signature`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ signature: signature })
+            });
+
+            if (response.ok) {
+              alert('Contract signed successfully!');
+              window.location.reload();
+            } else {
+              alert('Could not save signature.');
+              console.error(await response.text());
+            }
+
+          } catch (err) {
+            console.error(err);
+            alert('Could not sign message: ' + err.message);
           }
         });
       }

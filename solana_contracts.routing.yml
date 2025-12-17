@@ -129,3 +129,10 @@ solana_contracts.settings:
     _title: 'Solana Contracts Settings'
   requirements:
     _permission: 'administer contract entities'
+solana_contracts.save_keys:
+  path: '/solana/save-keys'
+  defaults:
+    _controller: '\Drupal\solana_contracts\Controller\SolanaAccountController::saveKeys'
+  requirements:
+    _permission: 'access content'
+  methods: [POST]

@@ -26,6 +26,24 @@ class SignForm extends FormBase {
     $form['#attached']['drupalSettings']['solana_contracts']['contract_hash'] = $contract->get('hash')->value;
     $form['#attached']['drupalSettings']['solana_contracts']['contract_id'] = $contract->id();
 
+    // Check if user has a Solana account.
+    $user = $this->currentUser();
+    if ($user->isAuthenticated()) {
+      $storage = \Drupal::entityTypeManager()->getStorage('solana_account');
+      $query = $storage->getQuery()
+        ->condition('user_id', $user->id())
+        ->accessCheck(FALSE);
+      $ids = $query->execute();
+
+      if (!empty($ids)) {
+        $account = $storage->load(reset($ids));
+        $form['#attached']['drupalSettings']['solana_contracts']['solana_account'] = [
+            'public_key' => $account->get('address')->value,
+            'private_key' => $account->get('private_key')->value,
+        ];
+      }
+    }
+
     $form['actions']['connect'] = [
       '#type' => 'button',
       '#value' => $this->t('Connect Wallet'),

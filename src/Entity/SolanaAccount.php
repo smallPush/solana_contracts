@@ -61,6 +61,21 @@ class SolanaAccount extends ContentEntityBase {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    $fields['private_key'] = BaseFieldDefinition::create('string_long')
+      ->setLabel(t('Private Key'))
+      ->setRequired(FALSE)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'basic_string',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textarea',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('User'))
       ->setSetting('target_type', 'user')
