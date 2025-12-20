@@ -12,7 +12,8 @@ use Drupal\Core\Session\AccountInterface;
 /**
  * Defines a class to build a listing of Contract entities.
  */
-class ContractListBuilder extends EntityListBuilder {
+class ContractListBuilder extends EntityListBuilder
+{
 
   /**
    * The current user.
@@ -24,7 +25,8 @@ class ContractListBuilder extends EntityListBuilder {
   /**
    * {@inheritdoc}
    */
-  public static function createInstance(ContainerInterface $container, EntityTypeInterface $entity_type) {
+  public static function createInstance(ContainerInterface $container, EntityTypeInterface $entity_type)
+  {
     return new static(
       $entity_type,
       $container->get('entity_type.manager')->getStorage($entity_type->id()),
@@ -42,7 +44,8 @@ class ContractListBuilder extends EntityListBuilder {
    * @param \Drupal\Core\Session\AccountInterface $current_user
    *   The current user.
    */
-  public function __construct(EntityTypeInterface $entity_type, EntityStorageInterface $storage, AccountInterface $current_user) {
+  public function __construct(EntityTypeInterface $entity_type, EntityStorageInterface $storage, AccountInterface $current_user)
+  {
     parent::__construct($entity_type, $storage);
     $this->currentUser = $current_user;
   }
@@ -50,7 +53,8 @@ class ContractListBuilder extends EntityListBuilder {
   /**
    * {@inheritdoc}
    */
-  public function buildHeader() {
+  public function buildHeader()
+  {
     $header['id'] = $this->t('Contract ID');
     $header['name'] = $this->t('Title');
     return $header + parent::buildHeader();
@@ -59,7 +63,8 @@ class ContractListBuilder extends EntityListBuilder {
   /**
    * {@inheritdoc}
    */
-  public function buildRow(EntityInterface $entity) {
+  public function buildRow(EntityInterface $entity)
+  {
     /* @var \Drupal\solana_contracts\Entity\Contract $entity */
     $row['id'] = $entity->id();
     $row['name'] = $entity->label();
@@ -69,16 +74,20 @@ class ContractListBuilder extends EntityListBuilder {
   /**
    * {@inheritdoc}
    */
-  protected function getEntityIds() {
+  protected function getEntityIds()
+  {
     $query = $this->getStorage()->getQuery()
       ->accessCheck(TRUE)
       ->sort($this->entityType->getKey('id'));
 
-    // Only show contracts where the current user is party A or party B.
-    $group = $query->orConditionGroup()
-      ->condition('party_a', $this->currentUser->id())
-      ->condition('party_b', $this->currentUser->id());
-    $query->condition($group);
+    // Check if the user has permission to administer contracts.
+    if (!$this->currentUser->hasPermission('administer contract entities')) {
+      // Only show contracts where the current user is party A or party B.
+      $group = $query->orConditionGroup()
+        ->condition('party_a', $this->currentUser->id())
+        ->condition('party_b', $this->currentUser->id());
+      $query->condition($group);
+    }
 
     return $query->execute();
   }

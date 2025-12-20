@@ -1,7 +1,9 @@
 solana-web3:
   version: 1.x
   js:
-    https://cdn.jsdelivr.net/npm/@solana/web3.js@latest/lib/index.iife.min.js: { type: external, minified: true }
+    https://cdn.jsdelivr.net/npm/tweetnacl@1.0.3/nacl.min.js: { type: external, minified: true }
+    https://bundle.run/bs58@4.0.1: { type: external, minified: true }
+    https://cdn.jsdelivr.net/npm/@solana/web3.js@1.87.6/lib/index.iife.min.js: { type: external, minified: true }
     js/solana_contracts.js: {}
   dependencies:
     - core/drupal
